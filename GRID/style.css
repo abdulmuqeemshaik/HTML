@@ -1,0 +1,117 @@
+/* grid --> it is a two dimensional layout
+or multidimesnional layout 
+
+parent properties
+
+display: grid; ---->(mandatory)
+grid-template-colums: 200px 300px 344px;
+grid-template-row: 100px 100px 1000px;
+justify-content:
+align-content:center;
+place-items ---> shortend property
+column-gap
+row-gap
+gap
+grid-templates-ares:
+
+
+child properties
+grid-column-start:5;
+grid-column-end: 6;
+grid-row-start:2;
+grid-row-end:5;
+
+grid-column ---> shortend-property
+grid-row ---> shortend-property
+
+
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    border: 2px solid rgb(109, 35, 35);
+    display:grid;
+    /* gap:10px; */
+    /* justify-content: center;
+    align-content: center; */
+    /* place-items: center; */
+    /* grid-template-columns:repeat(1,100px);
+    grid-template-rows: repeat(2,1fr); */
+    grid-template-areas:
+        'HEADER HEADER HEADER HEADER HEADER'
+        'ASIDE ARTICLE ARTICLE ARTICLE ASIDE'
+        'ASIDE ARTICLE ARTICLE ARTICLE ASIDE'
+        'ASIDE ARTICLE ARTICLE ARTICLE ASIDE'
+        'FOTTER FOTTER FOTTER FOTTER FOTTER';
+}
+.child1{
+    /* height: 10vh;
+    width: 10vw; */
+    background-color: rgb(61, 22, 22);
+    grid-area: HEADER;
+    /* grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end:2; */ 
+    /* margin: 10px; */
+    /* grid-column: 1/6;
+    grid-row: 1,2; */
+}
+.child2{
+    /* height: 10vh;
+    width: 10vw; */
+    background-color: brown;
+    grid-area: ASIDE;
+    /* grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end:5; */
+    /* margin: 10px; */
+    /* grid-column: 1/2;
+    grid-row: 2/5; */
+}
+.child3{
+    /* height: 10vh;
+    width: 10vw; */
+    background-color: olivedrab;
+    grid-area: ARTICLE;
+    /* grid-column-start:2;
+    grid-column-end:5;
+    grid-row-start:2;
+    grid-row-end:5; */ 
+    /* margin: 10px; */
+    /* grid-column: 2/5;
+    grid-row: 2/5; */
+}
+.child4{
+    /* height: 10vh;
+    width: 10vw; */
+    background-color: darkorange;
+    /* grid-area: ASIDE;
+    grid-column-start:5;
+    grid-column-end: 6;
+    grid-row-start:2;
+    grid-row-end:5; */ 
+    /* margin: 10px; */
+    /* grid-column: 5/6;
+    grid-row: 2/5; */
+}
+.child5{
+    /* height: 10vh;
+    width: 10vw; */
+    background-color: bisque; 
+    grid-area: FOTTER;
+    /* grid-column-start:1;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end:6; */ 
+    /* margin: 10px; */
+    /* grid-column: 1/5;
+    grid-row: 5/6; */
+}

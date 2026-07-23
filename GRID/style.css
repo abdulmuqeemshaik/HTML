@@ -1,0 +1,235 @@
+/* /* grid --> it is a two dimensional layout
+or multidimesnional layout 
+
+parent properties
+
+display: grid; ---->(mandatory)
+grid-template-colums: 200px 300px 344px;
+grid-template-row: 100px 100px 1000px;
+justify-content:
+align-content:center;
+place-items ---> shortend property
+column-gap
+row-gap
+gap
+grid-templates-ares:
+
+
+child properties
+grid-column-start:5;
+grid-column-end: 6;
+grid-row-start:2;
+grid-row-end:5;
+
+grid-column ---> shortend-property
+grid-row ---> shortend-property
+
+
+*/
+
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    border: 2px solid rgb(109, 35, 35);
+    display:grid;
+    gap:10px; */
+    /* justify-content: center;
+    align-content: center; */
+    /* place-items: center; */
+    /* grid-template-columns:repeat(1,100px);
+    grid-template-rows: repeat(2,1fr); */
+    /* grid-template-areas:
+        'HEADER HEADER HEADER HEADER HEADER'
+        'ASIDE ARTICLE ARTICLE ARTICLE ASIDE'
+        'ASIDE ARTICLE ARTICLE ARTICLE ASIDE'
+        'ASIDE ARTICLE ARTICLE ARTICLE ASIDE'
+        'FOTTER FOTTER FOTTER FOTTER FOTTER'; */
+/* } */
+/* .child1{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color: rgb(61, 22, 22); */
+    /* grid-area: HEADER; */
+    /* grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end:2;  */
+    /* margin: 10px; */
+    /* grid-column: 1/6;
+    grid-row: 1,2; */
+/* } */
+/* .child2{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color: brown; */
+    /* grid-area: ASIDE; */
+    /* grid-column-start:1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end:4; */
+    /* margin: 10px; */
+    /* grid-column: 1/2;
+    grid-row: 2/5; */
+/* } */
+/* .child3{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color: olivedrab; */
+    /* grid-area: ARTICLE; */
+    /* grid-column-start:1;
+    grid-column-end:2;
+    grid-row-start:4;
+    grid-row-end:6; */
+    /* margin: 10px; */
+    /* grid-column: 2/5;
+    grid-row: 2/5; */
+/* } */
+/* .child4{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color: darkorange; */
+    /* /* grid-area: ASIDE; */
+    /* grid-column-start:2;
+    grid-column-end: 3;
+    grid-row-start:4;
+    grid-row-end:5;
+    margin: 10px; */
+    /* grid-column: 5/6;
+    grid-row: 2/5; */
+/* } */
+/* .child5{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color: bisque;  */
+    /* grid-area: FOTTER; */
+    /* grid-column-start:2;
+    grid-column-end:3;
+    grid-row-start:5;
+    grid-row-end:6; */
+    /* margin: 10px; */
+    /* grid-column: 1/5;
+    grid-row: 5/6; */
+/* } */
+/* .child6{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color: red;  */
+    /* grid-area: FOTTER; */
+    /* grid-column-start:3;
+    grid-column-end:4;
+    grid-row-start:2;
+    grid-row-end:6; */
+    /* margin: 10px; */
+    /* grid-column: 1/5;
+    grid-row: 5/6; */
+/* } */
+/* .child7{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color: blue;  */
+    /* grid-area: FOTTER; */
+    /* grid-column-start:4;
+    grid-column-end:5;
+    grid-row-start:2;
+    grid-row-end:3; */
+    /* margin: 10px; */
+    /* grid-column: 1/5;
+    grid-row: 5/6; */
+/* } */
+/* .child8{ */
+    /* height: 10vh;
+    width: 10vw; */
+    /* background-color:violet;  */
+    /* grid-area: FOTTER; */
+    /* grid-column-start:4;
+    grid-column-end:5;
+    grid-row-start:3;
+    grid-row-end:6; */
+    /* margin: 10px; */
+    /* grid-column: 1/5;
+    grid-row: 5/6; */
+/* } */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    background:bisque;
+}
+
+/* Common properties for all boxes */
+.child{
+    background-size: cover;      /* Fill the box */
+    background-position: center; /* Center image */
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+/* Top Banner */
+.child1{
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    background-image: url("https://cdn.wallpapersafari.com/51/21/7Pq8dr.jpg");
+}
+
+/* Left Top */
+.child2{
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+    background-image: url("https://miro.medium.com/1*4JZW38j4n0F7IqsHcjUkdA.jpeg");
+}
+
+/* Bottom Left */
+.child3{
+    grid-column: 1 / 2;
+    grid-row: 4 / 6;
+    background-image: url("https://i.pinimg.com/736x/14/73/97/147397b4edb5bbea67adac2223d6d3c6.jpg");
+}
+
+/* Small Middle */
+.child4{
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    background-image: url("https://preview.redd.it/kid-kakashi-is-the-most-cool-looking-character-in-my-v0-z3dcdsjrmjcg1.jpg?width=554&format=pjpg&auto=webp&s=2d36e6466ec351067ac988160f1e8d10f2e58bf1");
+
+}
+/* Bottom Small */
+.child5{
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    background-image: url("https://static0.srcdn.com/wordpress/wp-content/uploads/2023/04/naruto-s-dad-minato-holding-a-kunai-1.jpg?w=1200&h=675&fit=crop");
+}
+
+/* Large Center */
+.child6{
+    grid-column: 3 / 4;
+    grid-row: 2 / 6;
+    background-image: url("https://img-9gag-fun.9cache.com/photo/az1dRdN_460s.jpg");
+}
+
+/* Right Top */
+.child7{
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    background-image: url("https://preview.redd.it/happy-birthday-jiraiya-v0-d7z01j5yqpzb1.png?width=640&crop=smart&auto=webp&s=71cf057651497eb1a00c9379f8756cc3911c487d");
+}
+
+/* Right Bottom */
+.child8{
+    grid-column: 4 / 5;
+    grid-row: 3 / 6;
+    background-image: url("https://i.pinimg.com/736x/9c/8d/c6/9c8dc6f2a8835941b7e7a46a4ff21ad2.jpg");
+}

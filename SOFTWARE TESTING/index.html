@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Testing MCQ Practice</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--text:#172033;--muted:#65718a;--border:#dce3ee;--blue:#315ee7;--green:#15803d;--greenbg:#dcfce7;--red:#b91c1c;--redbg:#fee2e2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);line-height:1.5}
+header{background:linear-gradient(135deg,#182848,#315ee7);color:white;padding:28px 18px}
+.wrap{max-width:900px;margin:auto}h1{margin:0;font-size:clamp(1.5rem,4vw,2.2rem)}header p{margin:7px 0 0;color:#e2eaff}
+.toolbar{position:sticky;top:0;z-index:3;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 16px}
+.tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:900px;margin:auto}.progress{height:8px;background:#e5eaf3;border-radius:10px;overflow:hidden;flex:1;min-width:110px}.bar{height:100%;background:var(--blue);width:0;transition:width .2s}
+.stat{font-size:.9rem;color:var(--muted);white-space:nowrap}button{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 14px;font-weight:650}.primary{background:var(--blue);color:white}.secondary{background:#e9eefb;color:#2447b8}
+main{max-width:900px;margin:24px auto;padding:0 16px 50px}.intro{color:var(--muted);margin-bottom:18px}.section{font-size:1.1rem;margin:28px 0 12px}.question{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin:12px 0;box-shadow:0 3px 12px #17203308}.qtop{display:flex;gap:12px;align-items:flex-start}.num{background:#edf1ff;color:#294bc3;border-radius:8px;padding:3px 9px;font-weight:800;white-space:nowrap}.qtext{font-weight:700;flex:1}.options{display:grid;gap:9px;margin-top:16px}.option{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;border:1px solid var(--border);background:white;color:var(--text);font-weight:500;padding:12px;border-radius:10px;transition:.15s}.option:hover:not(:disabled){border-color:#8198f4;background:#f7f8ff}.letter{font-weight:800;min-width:22px}.option.correct{background:var(--greenbg);border-color:#22a052;color:#14532d}.option.wrong{background:var(--redbg);border-color:#ef4444;color:#7f1d1d}.option:disabled{cursor:default}.feedback{font-size:.9rem;font-weight:700;margin-top:10px;min-height:0}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}.bottom{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin:24px 0}.result{display:none;background:white;border:1px solid var(--border);padding:22px;border-radius:16px;margin:18px 0}.result h2{margin-top:0}.scorebig{font-size:2rem;font-weight:850}.foot{color:var(--muted);font-size:.85rem;text-align:center;margin-top:25px}
+@media(max-width:560px){.question{padding:15px}.tools{gap:7px}.stat{font-size:.8rem}button{padding:9px 11px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>Software Testing Test</h1><p>Manual Software Testing • 44 multiple-choice questions</p></div></header>
+<div class="toolbar"><div class="tools"><span class="stat" id="answered">Answered: 0 / 44</span><div class="progress"><div class="bar" id="bar"></div></div><span class="stat" id="liveScore">Correct: 0</span><button class="secondary" onclick="resetQuiz()">Restart</button></div></div>
+<main><p class="intro">Choose an option. Correct answers turn <strong style="color:#15803d">green</strong>. If you choose the wrong answer, the wrong option turns red and the correct answer is highlighted green. No explanations.</p>
+<div id="quiz"></div>
+<div class="result" id="result"><h2>Quiz result</h2><div class="scorebig" id="finalScore"></div><p id="finalText"></p><button class="primary" onclick="resetQuiz()">Try again</button></div>
+<div class="bottom"><span class="stat">Your score updates as you answer.</span><button class="primary" onclick="finishQuiz()">Finish quiz</button></div>
+<div class="foot">Based on your uploaded Software Testing Test PDF.</div></main>
+<script>
+const sections = [
+{title:"Part 1: Manual Software Testing Fundamentals", questions:[
+["What is software testing?",["Installing applications only","Writing code only","Finding defects and checking software behavior","Designing website colors"],2],
+["A developer accidentally writes the wrong formula in a billing program. What is the developer's mistake called?",["Requirement","Error","Failure","Test case"],1],
+["Which testing approach examines the internal code and program logic?",["Usability testing","White-box testing","Acceptance testing","Black-box testing"],1],
+["Which SDLC model follows a sequential approach through development phases?",["RAD model","Waterfall model","Prototype model","Spiral model"],1],
+["A tester enters a correct username and password, but the application displays “Invalid credentials.” What is the most appropriate conclusion?",["The test case is automatically invalid","The application has passed the test","The requirement is always incorrect","The application may contain a defect"],3],
+["A tester finds a defect in the password-reset feature. The developer fixes it, and the tester checks that the same issue is resolved. What is this check called?",["Confirmation testing (retesting)","Usability testing","Load testing","Compatibility testing"],0],
+["A tester checks whether all executable statements in a function have run at least once. Which technique is being used?",["Boundary value analysis","Statement coverage","Usability testing","Equivalence partitioning"],1],
+["A tester checks the login page without viewing the source code. The tester enters inputs and compares the displayed results with requirements. Which approach is this?",["Path testing","White-box testing","Black-box testing","Statement coverage"],2],
+["A developer makes a mistake while writing code. That mistake introduces a flaw into the program. When the program runs, it produces an incorrect result. Which sequence best represents these concepts?",["Defect → failure → error","Requirement → failure → error","Failure → error → defect","Error → defect → failure"],3],
+["Which SDLC model is especially useful when customers are unsure about their requirements and need to see an early working model?",["Waterfall model","V-model","Prototype model","RAD model"],2],
+["In the V-model, which testing level is commonly matched with the architectural design phase?",["Integration testing","Unit testing","System testing","Acceptance testing"],0],
+["A tester verifies that a shopping cart correctly adds item prices, calculates tax, and displays the total. What is the main testing category?",["Performance testing","Security testing","Compatibility testing","Functional testing"],3],
+["A tester changes one condition in a program's source code and checks whether the existing test cases detect the change. Which technique is this?",["Compatibility testing","Boundary value analysis","Mutation testing","Acceptance testing"],2],
+["A tester verifies that a user cannot access the admin page without permission. Which testing type is most relevant?",["Usability testing","Compatibility testing","Performance testing","Security testing"],3],
+["A banking application must process a transfer correctly and complete it within two seconds. Which option correctly classifies the requirements?",["Correct transfer is functional; completion within two seconds is non-functional","Both requirements are non-functional","Both requirements are functional","Correct transfer is non-functional; completion time is functional"],0],
+["Why is testing important before software is released to customers?",["It proves that developers never make mistakes","It guarantees that no defect can ever exist","It removes the need for requirements","It helps identify defects and assess whether the software meets requirements"],3],
+["Which document describes what a software application is expected to do?",["Test execution report","Software Requirements Specification (SRS)","Defect report","Daily status report"],1],
+["A tester compares the actual output with the expected output. What is the tester checking?",["Whether the result meets the requirement","Whether the developer wrote fewer lines","Whether the software is expensive","Whether the project has more developers"],0],
+["Which activity usually comes first in a structured software development lifecycle?",["Deployment","Requirement gathering and analysis","Maintenance","Final test closure"],1],
+["In which SDLC model are development activities arranged in a sequential flow?",["Waterfall model","Agile model","Prototype model","Spiral model"],0],
+["A banking application is being developed with repeated risk analysis in each cycle. Which SDLC model best fits this description?",["Waterfall","Spiral","Big Bang only","V-model only"],1],
+["What is a key purpose of a prototype in software development?",["To replace all future testing","To help clarify requirements using an early model","To guarantee zero defects","To eliminate customer feedback"],1],
+["Which SDLC model explicitly pairs development phases with corresponding testing levels?",["V-model","Prototype model","Big Bang model","Spiral model only"],0],
+["A project requires frequent customer feedback and small releases. Which approach is generally suitable?",["Strict Waterfall only","Agile development","No lifecycle model","One-time deployment without feedback"],1]
+]},
+{title:"Part 2: SDLC Phases and SDLC Models",questions:[
+["What is the first major activity in a typical SDLC?",["Requirement gathering and analysis","Final deployment","Maintenance","Production monitoring only"],0],
+["During which SDLC phase is the system's structure and solution planned?",["Design","Maintenance","Release closure","Requirement sign-off only"],0],
+["In which phase is the planned software solution converted into program code?",["Implementation or development","Requirement gathering","Deployment only","Project closure"],0],
+["When is software commonly installed or made available to its intended users?",["Deployment","Requirement analysis","Design","Coding"],0],
+["Which SDLC phase focuses on updates, corrections, and ongoing support after release?",["Maintenance","Initial requirement gathering","Initial design only","Project estimation"],0],
+["A team interviews users to understand what a new school management system must do. Which phase is this?",["Requirement analysis","Deployment","Maintenance","Coding completion"],0],
+["A team decides the database tables, application architecture, and screen layout before coding. Which phase is this?",["Design","Production maintenance","Release monitoring","Final retirement"],0],
+["Developers are writing the login and registration features according to the design. Which phase are they performing?",["Implementation","Requirement gathering","Deployment","Maintenance"],0],
+["A company releases its completed application to a live server for customers to use. Which phase is this?",["Deployment","Requirement analysis","Design","Initial planning"],0],
+["After launch, a bank requests an update to support a new type of account. Which SDLC phase normally handles this change?",["Maintenance","Initial requirement gathering only","Initial design only","Pre-project estimation only"],0],
+["What is a key characteristic of the Waterfall model?",["Phases generally proceed in sequence","All phases must happen randomly","It has no requirements phase","It only supports mobile applications"],0],
+["Which SDLC model is especially associated with managing project risks through repeated cycles?",["Spiral model","Waterfall model","V-model","A one-time release model"],0],
+["A customer wants to see an early sample of an application before finalizing requirements. Which model is a suitable choice?",["Prototype model","Waterfall model in every situation","Maintenance model","Deployment model"],0],
+["Which model links development activities with corresponding testing activities?",["V-model","Prototype model","Spiral model only","Big Bang model"],0],
+["A team delivers a small part of a product, collects feedback, and improves it in repeated cycles. Which approach does this describe best?",["Agile development","Strict sequential Waterfall only","One-time delivery with no feedback","Maintenance without development"],0],
+["In a typical SDLC, why is the design phase important before implementation?",["It provides a plan for how the software will be built","It proves the application has no defects","It replaces all user requirements","It completes production deployment automatically"],0],
+["Which activity is most likely to occur during requirements analysis?",["Clarifying what users need from the system","Installing the final application for all users","Repairing a live production server after launch","Writing every program function immediately"],0],
+["A project team begins coding before agreeing on important requirements. What is a likely risk?",["The team may build features that do not meet user needs","The project is guaranteed to finish sooner","All defects will be prevented","Maintenance will never be required"],0],
+["Why is feedback useful during software development?",["It helps the team identify mismatches between the product and user expectations","It guarantees that no future changes will be needed","It eliminates the need to communicate","It replaces all project documentation"],0],
+["Which statement best describes the relationship between SDLC and software testing?",["Testing activities can support quality throughout multiple SDLC phases","Testing happens only after maintenance ends","SDLC refers only to writing code","Testing and SDLC are unrelated"],0]
+]}];
+let answers={}, locked={};
+function render(){const root=document.getElementById('quiz');root.innerHTML='';let n=0;sections.forEach((s,si)=>{const h=document.createElement('h2');h.className='section';h.textContent=s.title;root.appendChild(h);s.questions.forEach((q,qi)=>{n++;const questionNumber=n;const card=document.createElement('article');card.className='question';card.id='q'+questionNumber;const top=document.createElement('div');top.className='qtop';top.innerHTML='<span class="num">Q'+questionNumber+'</span><div class="qtext"></div>';top.querySelector('.qtext').textContent=q[0];card.appendChild(top);const opts=document.createElement('div');opts.className='options';q[1].forEach((opt,oi)=>{const b=document.createElement('button');b.className='option';b.type='button';b.innerHTML='<span class="letter">'+String.fromCharCode(65+oi)+'.</span><span></span>';b.children[1].textContent=opt;b.onclick=()=>choose(questionNumber,oi,q[2],opts,card);opts.appendChild(b)});card.appendChild(opts);const fb=document.createElement('div');fb.className='feedback';fb.id='fb'+questionNumber;card.appendChild(fb);root.appendChild(card)})});updateStats()}
+function choose(n,choice,correct,opts,card){if(locked[n])return;locked[n]=true;answers[n]=choice===correct;[...opts.children].forEach((b,i)=>{b.disabled=true;if(i===correct)b.classList.add('correct');if(i===choice&&choice!==correct)b.classList.add('wrong')});const fb=document.getElementById('fb'+n);fb.textContent=choice===correct?'Correct':'Wrong';fb.className='feedback '+(choice===correct?'good':'bad');updateStats()}
+function updateStats(){const total=44,done=Object.keys(locked).length,correct=Object.values(answers).filter(Boolean).length;document.getElementById('answered').textContent='Answered: '+done+' / '+total;document.getElementById('liveScore').textContent='Correct: '+correct;document.getElementById('bar').style.width=(done/total*100)+'%'}
+function finishQuiz(){const done=Object.keys(locked).length,correct=Object.values(answers).filter(Boolean).length;const r=document.getElementById('result');r.style.display='block';document.getElementById('finalScore').textContent=correct+' / 44';document.getElementById('finalText').textContent='Answered: '+done+' of 44 • Incorrect: '+(done-correct)+' • Unanswered: '+(44-done);r.scrollIntoView({behavior:'smooth',block:'center'})}
+function resetQuiz(){answers={};locked={};document.getElementById('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'})}
+render();
+</script>
+</body></html>
